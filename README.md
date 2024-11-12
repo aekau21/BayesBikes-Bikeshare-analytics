@@ -1,8 +1,10 @@
-# BayesBikes-Bikeshare-analytics
+# Bayes Bikes Final Project! 🧑🏼‍💻
 
 
-<img width="235" alt=https://github.com/aekau21/BayesBikes-Bikeshare-analytics/blob/main/Chaminade-Seal.png
+<"https://github.com/aekau21/BayesBikes-Bikeshare-analytics/blob/main/Chaminade-Seal.png">
+  
 
 
+Final Project of Bikes by Anson, Sydney, Kole, and Lela 🚴🏼‍♀️
 
-###Final Project of Bikes by Anson, Sydney, Kole, and Lela
+#### About the Project:
