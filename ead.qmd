@@ -1,0 +1,62 @@
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(ggcorrplot)
+
+# Load the dataset
+#bikes <- read.csv('bikes.csv')
+
+# Display the first few rows
+head(bikes)
+
+# Get basic info about the dataset
+str(bikes)
+
+# Check for missing values
+colSums(is.na(bikes))
+
+```
+
+```{r}
+#ggplot(bikes, aes(x = rides)) +
+ # geom_histogram(binwidth = 500, fill = "skyblue", color = "black") +
+ # geom_density(aes(y = ..count..), color = "red", size = 1) +
+ # labs(title = "Distribution of Rides", x = "Number of Rides", y = "Frequency")
+
+```
+
+```{r}
+ggplot(bikes, aes(x = factor(season), y = rides)) +
+  geom_boxplot(fill = "lightgreen") +
+  labs(title = "Boxplot of Rides by Season", x = "Season", y = "Number of Rides")
+
+```
+
+```{r}
+ggplot(bikes, aes(x = factor(weekend), y = rides)) +
+  geom_boxplot(fill = "lightblue") +
+  labs(title = "Rides on Weekends vs. Weekdays", x = "Weekend (1 = Yes, 0 = No)", y = "Number of Rides")
+
+```
+
+```{r}
+ggplot(bikes, aes(x = factor(weekend), y = rides)) +
+  geom_boxplot(aes(fill = factor(season))) +
+  facet_grid(. ~ season) +
+  labs(
+    title = "Rides on Weekends vs. Weekdays by Season",
+    x = "Weekend (1 = Yes, 0 = No)",
+    y = "Number of Rides"
+  ) +
+  scale_fill_manual(values = c("springgreen", "skyblue", "orange", "pink"))
+
+```
+
+```{r}
+ggplot(bikes, aes(x = factor(day_of_week), y = rides)) +
+  stat_summary(fun = mean, geom = "bar", fill = "orange") +
+  labs(title = "Average Number of Rides by Day of Week", x = "Day of the Week", y = "Average Number of Rides")
+
+```
