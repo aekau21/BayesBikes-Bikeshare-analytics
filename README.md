@@ -1,21 +1,25 @@
 # Bayes Bikes Final Project! 🧑🏼‍💻
 
 
-<"https://github.com/aekau21/BayesBikes-Bikeshare-analytics/blob/main/Chaminade-Seal.png">
-  
-
-
 Final Project of Bikes by Anson, Sydney, Kole, and Lela 🚴🏼‍♀️
+
+
+<"https://github.com/aekau21/BayesBikes-Bikeshare-analytics/blob/main/Chaminade-Seal.png">
+
+
 
 
 Our Githubs: 
 
-Anson - 
+Anson - https://github.com/aekau21 
 
-Sydney - 
+Sydney - https://github.com/sydneydanielson 
 
-Kole - 
+Kole - https://github.com/KoleN73
 
-Lela - 
+Lela - https://github.com/lelagi
 
 #### About the Project:
+
+
+
