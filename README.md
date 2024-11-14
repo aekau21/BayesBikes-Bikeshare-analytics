@@ -7,4 +7,15 @@
 
 Final Project of Bikes by Anson, Sydney, Kole, and Lela 🚴🏼‍♀️
 
+
+Our Githubs: 
+
+Anson - 
+
+Sydney - 
+
+Kole - 
+
+Lela - 
+
 #### About the Project:
