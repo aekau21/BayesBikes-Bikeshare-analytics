@@ -8,7 +8,7 @@ editor: visual
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
-## Load Libraries 
+## Load Libraries
 
 ```{r, warning=FALSE, message=FALSE}
 library(bayesrules)
@@ -72,7 +72,7 @@ new_data_for_prediction <- data.frame(
 )
 ```
 
-## Prediction and results 
+## Prediction and results
 
 ```{r}
 prediction <- 
@@ -82,4 +82,5 @@ prediction <-
 ```{r}
 mcmc_dens(prediction) + 
   xlab("new prediction of rides")
+  
 ```
