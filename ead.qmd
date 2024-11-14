@@ -20,10 +20,10 @@ colSums(is.na(bikes))
 ```
 
 ```{r}
-#ggplot(bikes, aes(x = rides)) +
- # geom_histogram(binwidth = 500, fill = "skyblue", color = "black") +
- # geom_density(aes(y = ..count..), color = "red", size = 1) +
- # labs(title = "Distribution of Rides", x = "Number of Rides", y = "Frequency")
+ggplot(bikes, aes(x = rides)) +
+  geom_histogram(binwidth = 500, fill = "skyblue", color = "black") +
+  geom_density(aes(y = ..count..), color = "red", size = 1) +
+  labs(title = "Distribution of Rides", x = "Number of Rides", y = "Frequency")
 
 ```
 
