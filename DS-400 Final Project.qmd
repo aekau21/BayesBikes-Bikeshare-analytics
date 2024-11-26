@@ -1,0 +1,86 @@
+---
+title: "DS-400 Final Project Bikeshare"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Load Libraries
+
+```{r, warning=FALSE, message=FALSE}
+library(bayesrules)
+library(tidyverse)
+library(rstan)
+library(rstanarm)
+library(bayesplot)
+library(tidybayes)
+library(janitor)
+library(broom.mixed)
+library(ggpubr)
+library(plotly)
+options(scipen = 999)
+```
+
+## Data Used
+
+```{r}
+data(bikes)
+view(bikes)
+```
+
+## Bayesian Model
+
+```{r}
+bike_model <- stan_glm(rides ~ temp_feel, data = bikes,
+                       family = gaussian,
+                       prior_intercept = normal(5000, 1000),
+                       prior = normal(100, 40), 
+                       prior_aux = exponential(0.0008),
+                       chains = 4, iter = 5000*2, seed = 84735)
+```
+
+```{r}
+bike_model
+```
+
+```{r}
+bike_model_all <- stan_glm(
+  rides ~ season + year + month + day_of_week + weekend + holiday + temp_actual + temp_feel + humidity + windspeed + weather_cat,
+  data = bikes,
+  family = gaussian,  
+  chains = 4, 
+  iter = 5000, 
+  seed = 84735
+)
+```
+
+```{r}
+new_data_for_prediction <- data.frame(
+  temp_feel = 90, 
+  temp_actual =85,
+  season = "fall",      
+  year = 2011,           
+  month = "Oct",             
+  day_of_week = "Wed", 
+  weekend = FALSE,           
+  holiday = "no",            
+  humidity = 10,      
+  windspeed = 17,        
+  weather_cat = "categ1"   
+)
+```
+
+## Prediction and results
+
+```{r}
+prediction <- 
+  posterior_predict(bike_model_all, newdata = new_data_for_prediction)
+```
+
+```{r}
+mcmc_dens(prediction) + 
+  xlab("new prediction of rides")
+```
