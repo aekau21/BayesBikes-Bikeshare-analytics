@@ -20,6 +20,7 @@ library(tidybayes)
 library(janitor)
 library(broom.mixed)
 library(ggpubr)
+library(plotly)
 options(scipen = 999)
 ```
 
@@ -58,7 +59,7 @@ bike_model_all <- stan_glm(
 
 ```{r}
 new_data_for_prediction <- data.frame(
-  temp_feel = 85, 
+  temp_feel = 90, 
   temp_actual =85,
   season = "fall",      
   year = 2011,           
@@ -66,7 +67,7 @@ new_data_for_prediction <- data.frame(
   day_of_week = "Wed", 
   weekend = FALSE,           
   holiday = "no",            
-  humidity = 0,      
+  humidity = 10,      
   windspeed = 17,        
   weather_cat = "categ1"   
 )
@@ -82,5 +83,4 @@ prediction <-
 ```{r}
 mcmc_dens(prediction) + 
   xlab("new prediction of rides")
-  
 ```
